@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Music - Web Player</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/utility.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="left bg-grey">
+            <div class="left-box border ">
+                <span><img class="invert" src="/images/logo.svg"></svg></span>
+                <div class="search "><img width="20px" src="/images/search.svg"><input
+                        class="text-box" type="text" placeholder="Search"></div>
+
+                <ul class="border">
+                    <li class="left-box-buttons cursor home"><img src="/images/home.svg">Home</li>
+                    <li class="left-box-buttons cursor new"><img style="height:23px; width:23px;" src="/images/new.svg">New</li>
+                    <li class="left-box-buttons cursor radio"><img src="/images/radio.svg">Radio</li>
+                </ul>
+            </div>
+            <div class="left-bottom invert">
+                <img src="/images/music.svg"><span>Open in Music</span>
+            </div>
+
+        </div>
+        <div class="right bg-black">
+            <div class="playbar border">
+                <div class="controls border">
+                    <img class="invert cursor" src="/images/shuffle.svg">
+                    <img class="invert cursor" id="prev" src="/images/prevsong.svg">
+                    <img class="invert cursor" id="play" src="/images/play.svg">
+                    <img class="invert cursor" id="next" src="/images/nextsong.svg">
+                    <img class="invert cursor" src="/images/repeat.svg">
+                </div>
+                <div class="seekbar border">
+                    <div class="pic">
+                    <img class="invert" style="width: 80%;" src="/images/music.svg">
+                    </div>
+                    <div class="if">
+                        <div class="playinfo border">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="playcont">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="volume border cursor">
+                    <img class="invert" id="vol" src="/images/volume.svg">
+                    <input type="range" name="volume">
+                </div>
+                <div class="login border">
+                    <img class="invert cursor" src="/images/hamburger.svg">
+                    <button class="login-btn cursor">Sign in</button>
+                </div>
+            </div>
+
+            <section class="area num1">
+                <h2>New</h2>
+                <div class="seperation"></div>
+                <div class="trending border">
+                    <div class="trending1 border">
+                        <div class="tdes1">
+                            <span>Hot Playlist</span>
+                            <h3>Friday Feeling</h3>
+                            <span>Apple Music Pop</span>
+                        </div>
+                        <img src="/images/600x344sr.webp">
+                    </div>
+                    <div class="trending2 border">
+                        <div class="tdes1">
+                            <span>NEW IN SPATIAL AUDIO</span>
+                            <h3>Pink Floyd at Pompeii - MCMLXXII (2025 Mix)</h3>
+                            <span>Pink Floyd</span>
+                        </div>
+                        <img src="/images/600x344sr (1).webp">
+                    </div>
+                </div>
+            </section>
+            <section class="area num2">
+                <h3>Listen to Live Radio Now</h3>
+                <div class="albums albcout1 border">
+                    <!-- <div class="album no1"><img><span>Apple Music 1</span><br><span>Apple Music</span></div> -->
+
+                </div>
+            </section>
+            <section class="area num3">
+                <h3>Latest Songs ></h3>
+                <hr class="seperation">
+                <div class="Sgrid">
+                    <!-- <div class="songlist">
+                        <div class="song">
+                            <span class="songimg">
+                                <img width="45px" src="/Apple Music/images/Old Phone.webp">
+                            </span>
+                            <div class="songinfo">
+                                <p>Old Phone</p>
+                                <p>Ed Sheeran</p>
+                            </div>
+                        </div> -->
+                  
+                </div>
+            </section>
+            <section class="area num4">
+                <h3>Everyone's Listening To...</h3>
+                <div class="albums albcout2 border">
+             
+                </div>
+            </section>
+
+            <section class="area num5">
+                <h3>More To Explore</h3>
+                <div class="Sgrid1">
+                    <div class="explorelist">
+                    </div>
+
+                    <div class="explorelist">
+                    </div>
+
+                    <div class="explorelist">
+                    </div>
+
+                       
+            </section>
+
+            <footer class="footer">
+                <p>India | English</p>
+                <span>Copyright @ 2025 Aple.All rights reserved</span>
+                <div>
+                    <a>Internet Service Terms</a>
+                    <a>Apple Music & Privacy</a>
+                    <a>Cookie Warning </a>
+                    <a>Support</a>
+                    <a>Feedback</a>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

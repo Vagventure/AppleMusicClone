@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/utility.css">
+    <style>
+        .playbar {
+            position: relative
+        }
+
+        .num1 {
+            margin-top: 30px;
+            height: 45vh;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .poster {
+            height: 90%;
+            width: 266px;
+        }
+
+        .artist {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 26px;
+            font-family: Helvetica, sans-serif;
+            font-weight: 600;
+        }
+
+        .num2 {
+            display: flex;
+            align-items: center;
+        }
+
+        .list {
+            height: 90%;
+            width: 95%;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border: 2px solid yellow;
+        }
+
+        .songlt {
+            background-color: #232323;
+            border: 2px solid green;
+            width: 100%;
+            height: auto;
+            padding: 10px 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body data-artist="<%= artist %>">
+    <div class="mainContainer">
+        <%- include ('../partials/sidemenu') %>
+            <div class="right bg-black" style="margin-left: 261px; width: calc(100vw - 17vw);">
+                <%- include ('../partials/navbar') %>
+                    <section class="area num1">
+                        <div class="poster"><img style="width: 100%; height: 100%; object-fit: contain;"
+                                src="/<%= route %>/<%= artist %>/cover.webp"></div>
+                        <div class="artist">
+                            <span>
+                                <%= artist %>
+                            </span>
+                            <span style="color: rgb(250,88,106); font-weight:400;">Apple Music</span>
+                        </div>
+                    </section>
+                    <section class="area num2 border">
+                        <div class="list">
+
+                        </div>
+                    </section>
+            </div>
+    </div>
+<script src="/js/playscript.js"></script>
+
+</body >
+
+</html >

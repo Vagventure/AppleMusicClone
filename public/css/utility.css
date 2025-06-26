@@ -1,0 +1,39 @@
+.bg-grey{
+    background-color: #252526;
+    color: white;
+}
+
+.bg-black{
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.white-text{
+    color: white;
+}
+
+.border{
+    border: 2px solid red;
+}
+.invert{
+    filter: invert();
+}
+
+.flex{
+    display: flex;
+}
+.align-center{
+    align-items: center;
+}
+
+.m-1{
+    margin: 5px;
+}
+
+.p-1{
+    padding: 10px;
+}
+
+.cursor{
+    cursor: pointer;
+}
