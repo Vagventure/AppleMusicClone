@@ -293,7 +293,7 @@ const seekbarinfo = () => {
 // });
 
 //Login - Registor box
-document.querySelector(".login-btn").addEventListener('click', ()=>{
+document.querySelector(".login-btn").addEventListener('click', () => {
     let a = document.querySelector(".Login-Section")
     console.log(a)
     let div = document.createElement('div')
@@ -304,17 +304,29 @@ document.querySelector(".login-btn").addEventListener('click', ()=>{
                 <img src="/images/logo.svg">
                 <h1>Sign in or Sign up</h1>
                 <h3>Enter your email address to get started.</h3>
-                <input type="text" placeholder="Enter your email address">
-                <input type="text" placeholder="Enter your password">
+                <input id="User" type="text" placeholder="Enter your email address">
+                <input id="Pass" type="text" placeholder="Enter your password">
                 <p>Your Apple Account information is used to allow you to sign in securely and access your data. Apple records certain data for security, support and reporting purposes. If you agree, Apple may also use your Apple Account information to send you marketing emails and communications, including based on your use of Apple services.</p>
-                <button class="cursor">Continue</button>
+                <button class="submit cursor">Continue</button>
                 
                 `
-    a.appendChild(div)            
+    a.appendChild(div)
+
+    document.querySelector(".cancel").addEventListener('click', () => {
+        let a = document.querySelector(".Login-Section")
+        a.removeChild(div)
+    })
     
-    document.querySelector(".cancel").addEventListener('click', ()=>{
-            let a = document.querySelector(".Login-Section")
-            a.removeChild(div)
+    // Account details saver
+    document.querySelector(".submit").addEventListener('click', async () => {
+        let username = document.getElementById("User").value
+        let userpass = document.getElementById("Pass").value
+        let r = await fetch("http://localhost:5000/", {
+            method: "POST", headers: {
+                "Content-Type": "application/json",
+            }, body: JSON.stringify({username,userpass })
+        })
+        console.log("Post request sent")
     })
 })
 

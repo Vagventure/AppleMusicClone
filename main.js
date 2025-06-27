@@ -1,8 +1,9 @@
 import express from 'express';
 import serveIndex from 'serve-index';
-import path from 'path';
+import { Account } from './models/account.js'
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+
 
 const app = express();
 const port = 3000;
@@ -19,6 +20,7 @@ app.use('/NewReleases', serveIndex(join(__dirname, 'public/NewReleases'), { icon
 
 app.get('/new', (req, res) => {
    res.sendFile('index.html', { root: join(__dirname, 'public') });
+
 });
 
 console.log({ root: __dirname });
@@ -40,6 +42,6 @@ app.get('/home', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+   console.log(`Example app listening on port ${port}`);
 });
 
