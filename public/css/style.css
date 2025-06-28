@@ -227,12 +227,13 @@ input[type="range"]::-moz-range-thumb {
     align-items: center;
 }
 
-.pic{
+.pic {
     width: 300px;
     height: 100%;
     border: 2px solid pink;
 }
-.seekbar .pic img{
+
+.seekbar .pic img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -247,28 +248,30 @@ input[type="range"]::-moz-range-thumb {
     width: 93%;
 }
 
-.trending{
+.trending {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     height: 90%;
- 
+
 }
 
-.trending1{
+.trending1 {
     border-radius: 10px;
     height: 90%;
     width: 50%;
-    
+
 
 }
-.trending2{
+
+.trending2 {
     border-radius: 10px;
     height: 90%;
     width: 50%;
 }
-.tdes1{
+
+.tdes1 {
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -278,11 +281,11 @@ input[type="range"]::-moz-range-thumb {
     color: rgb(180, 179, 179);
 }
 
-.tdes1 :nth-child(2){
+.tdes1 :nth-child(2) {
     color: rgb(224, 223, 223);
 }
 
-.trending img{
+.trending img {
     border: 2px solid purple;
     border-radius: 10px;
     height: 80%;
@@ -290,17 +293,17 @@ input[type="range"]::-moz-range-thumb {
     margin-top: 10px;
 }
 
-.num1{
+.num1 {
     height: 75vh;
     margin-top: 90px;
 }
 
-.num1 h2{
+.num1 h2 {
     font-size: 34px;
     font-family: Helvetica, sans-serif;
 }
 
-.albums{
+.albums {
     height: 88%;
     width: 100%;
     margin: 5px auto;
@@ -310,48 +313,52 @@ input[type="range"]::-moz-range-thumb {
     gap: 15px;
 }
 
-.album{
+.album {
     border: 2px solid red;
     height: 100%;
     width: 250px;
     cursor: pointer;
 }
 
-.album img{
+.album img {
     border: 2px solid yellow;
     height: 85%;
     width: 100%;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
-    
+
 }
 
-.no1 img{
-    background-image:url("/images/Radio.webp") ;
+.no1 img {
+    background-image: url("/images/Radio.webp");
 }
-.no2 img{
-    background-image:url("/images/chill.webp") ;
+
+.no2 img {
+    background-image: url("/images/chill.webp");
 }
-.no3 img{
-    background-image:url("/images/Hits.webp") ;
+
+.no3 img {
+    background-image: url("/images/Hits.webp");
 }
-.no4 img{
-    background-image:url("/images/club.webp") ;
+
+.no4 img {
+    background-image: url("/images/club.webp");
 }
-.no5 img{
-    background-image:url("/images/country.webp") ;
+
+.no5 img {
+    background-image: url("/images/country.webp");
 }
 
 
-.album span{
+.album span {
     color: rgba(255, 255, 255, 0.64);
     font-size: 12px;
     font-weight: 600;
 
 }
 
-.num2{
+.num2 {
     height: 45vh;
 }
 
@@ -364,7 +371,7 @@ input[type="range"]::-moz-range-thumb {
     align-items: center;
 }  */
 
-.Sgrid{
+.Sgrid {
     border: 2px solid blue;
     margin-top: 5px;
     display: flex;
@@ -374,17 +381,17 @@ input[type="range"]::-moz-range-thumb {
     /* gap: 10px 50px; */
     justify-content: space-between;
 
-    
-} 
 
-.songlist{
+}
+
+.songlist {
     border: 2px solid white;
     display: flex;
     flex-direction: column;
     height: 95%;
     width: 375px;
     gap: 7px;
-    
+
 }
 
 /* .song{
@@ -396,64 +403,65 @@ input[type="range"]::-moz-range-thumb {
     gap: 15px;
 } */
 
-.song{
+.song {
     border: 2px solid orange;
-    height:50px ;
+    height: 50px;
     width: 32%;
     display: flex;
     align-items: center;
     gap: 10px;
-    
+
 }
 
-.songimg{
+.songimg {
     width: 45px;
     height: 45px;
     border: 2px solid brown;
-    
+
 }
 
-.songimg img{
+.songimg img {
     cursor: pointer;
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.songinfo{
+.songinfo {
     padding: 5px;
     width: 80%;
     height: 40px;
     border: 2px solid brown;
     font-size: 13px;
     font-weight: 600;
-    color:  rgba(255, 255, 255, 0.92);
+    color: rgba(255, 255, 255, 0.92);
 }
 
-.songinfo :last-child{
+.songinfo :last-child {
     font-size: 12px;
-    color:  rgba(255, 255, 255, 0.64);
+    color: rgba(255, 255, 255, 0.64);
 }
 
 
-.num4{
+.num4 {
     height: 80vh;
 }
 
-.num4 .albums{
+.num4 .albums {
     align-items: start;
     justify-content: none;
     height: 94%;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
-.num4 .album{
-        border: 2px solid rgb(0, 255, 145);
-        height: 250px;
-        width: 215px;
-    
+.num4 .album {
+    border: 2px solid rgb(0, 255, 145);
+    height: 250px;
+    width: 215px;
+
 }
-.footer{
+
+.footer {
     padding: 20px 40px;
     display: flex;
     flex-direction: column;
@@ -462,12 +470,12 @@ input[type="range"]::-moz-range-thumb {
     color: rgba(255, 255, 255, 0.92);
 }
 
-.footer span{
+.footer span {
     margin-top: 10px;
 
 }
 
-.footer div{
+.footer div {
     width: auto;
     display: flex;
     gap: 20px;
@@ -475,11 +483,11 @@ input[type="range"]::-moz-range-thumb {
 }
 
 
-.explore{
+.explore {
     border: 2px solid orange;
     background-color: #2a2a2a;
     border-radius: 10px;
-    height:25% ;
+    height: 25%;
     width: 100%;
     padding: 10px;
     color: rgb(250, 88, 106);
@@ -491,7 +499,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 
-.num5 .Sgrid1{
+.num5 .Sgrid1 {
     border: 2px solid rgb(179, 255, 0);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -502,7 +510,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 
-.explorelist{
+.explorelist {
     border: 2px solid white;
     display: flex;
     flex-direction: column;
@@ -510,17 +518,17 @@ input[type="range"]::-moz-range-thumb {
     width: 380px;
     /* gap: 7px; */
     justify-content: space-between;
-    
+
 }
 
-.seperation{
+.seperation {
     height: 1px;
     width: 100%;
     background-color: rgb(54, 54, 54);
     margin-top: 10px;
 }
 
-.playinfo{
+.playinfo {
     height: 60%;
     width: 100%;
     border: 2px solid red;
@@ -529,17 +537,17 @@ input[type="range"]::-moz-range-thumb {
     align-items: center;
 }
 
-.playinfo :nth-child(1){
+.playinfo :nth-child(1) {
     height: 100%;
     width: 70%;
     padding: 5px;
     font-size: 14px;
     font-weight: 500;
     border: 2px solid yellow;
-    
+
 }
 
-.playinfo :nth-child(2){
+.playinfo :nth-child(2) {
     height: 100%;
     width: 25%;
     padding: 5px;
@@ -548,7 +556,7 @@ input[type="range"]::-moz-range-thumb {
     font-size: 14px;
 }
 
-.playcont{
+.playcont {
     width: 350px;
     height: 5px;
     background-color: #2c2c2c;
@@ -559,42 +567,42 @@ input[type="range"]::-moz-range-thumb {
     cursor: pointer;
 }
 
-.circle{
+.circle {
     width: 10px;
     height: 10px;
     border-radius: 13px;
     background-color: white;
     position: relative;
     bottom: 3px;
-    left:1%;
+    left: 1%;
     transition: left 0.5s;
 }
 
-.registory{
+.registory {
     height: 80vh;
     width: 50vw;
     padding: 10px;
     background-color: #323232;
     border-radius: 10px;
     color: white;
-    position:fixed;
+    position: fixed;
     top: 100px;
     left: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
 
 }
 
-.registory p{
+.registory p {
     padding: 0 100px;
     font-size: small;
     text-align: center;
 }
 
-.registory input{
+.registory input {
     padding: 15px 10px;
     width: 50%;
     background-color: transparent;
@@ -603,7 +611,7 @@ input[type="range"]::-moz-range-thumb {
     outline: 2px solid grey;
 }
 
-.registory button{
+.registory button {
     padding: 13px;
     color: white;
     font-size: medium;
@@ -612,20 +620,30 @@ input[type="range"]::-moz-range-thumb {
     width: 40%;
 }
 
-.registory h3{
+.registory h3 {
     font-weight: lighter;
     color: #8b8989;
 }
 
-.registory img{
+.registory img {
     width: 120px;
-    height: 30px;    
+    height: 30px;
 }
 
-.registory .cancel{
-position: absolute;
-left: -20px;
-top: 25px;
-height: 35px;
+.registory .cancel {
+    position: absolute;
+    left: -20px;
+    top: 25px;
+    height: 35px;
 }
 
+.registory a {
+    font-size: small;
+    color: red;
+    cursor: pointer;
+
+}
+
+.registory a:hover {
+    text-decoration: underline;
+}

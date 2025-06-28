@@ -182,6 +182,56 @@ async function displayreleases() {
 
 }
 
+// Login Portal
+function LoginPortal() {
+
+    let a = document.querySelector(".Login-Section")
+    console.log(a)
+    let div = document.createElement('div')
+    div.className = "registory"
+    div.style = "gap: 23px"
+
+    div.innerHTML = `  
+                <img class="cancel cursor" src="/images/cancel.svg">
+                <img src="/images/logo.svg">
+                <h1>Sign in</h1>
+                <h3>Enter your email address to get started.</h3>
+                <input id="User" type="text" placeholder="Enter your email address">
+                <input id="Pass" type="text" placeholder="Enter your password">
+                <p>Your Apple Account information is used to allow you to sign in securely and access your data. Apple records certain data for security, support and reporting purposes. If you agree, Apple may also use your Apple Account information to send you marketing emails and communications, including based on your use of Apple services.</p>
+                <button class="submit cursor">Continue</button>
+                
+                `
+    a.appendChild(div)
+
+    document.querySelector(".cancel").addEventListener('click', () => {
+        let a = document.querySelector(".Login-Section")
+        a.removeChild(div)
+    })
+
+    // Account details saver
+    document.querySelector(".submit").addEventListener('click', async () => {
+        let username = document.getElementById("User").value
+        let userpass = document.getElementById("Pass").value
+        let r = await fetch("http://localhost:5000/login", {
+            method: "POST", headers: {
+                "Content-Type": "application/json",
+            }, body: JSON.stringify({ username, userpass })
+        })
+        const data = await r.json()
+
+        if (data.success) {
+            alert(data.message)
+            a.removeChild(div)
+        }
+        else {
+            alert(data.message)
+        }
+        console.log("Post request sent")
+    })
+
+}
+
 //songsplayer
 async function songplayer() {
     document.querySelectorAll(".song").forEach(e => {
@@ -292,7 +342,7 @@ const seekbarinfo = () => {
 //     }
 // });
 
-//Login - Registor box
+//Registor Portal
 document.querySelector(".login-btn").addEventListener('click', () => {
     let a = document.querySelector(".Login-Section")
     console.log(a)
@@ -306,26 +356,43 @@ document.querySelector(".login-btn").addEventListener('click', () => {
                 <h3>Enter your email address to get started.</h3>
                 <input id="User" type="text" placeholder="Enter your email address">
                 <input id="Pass" type="text" placeholder="Enter your password">
+                <a>Login here</a>
                 <p>Your Apple Account information is used to allow you to sign in securely and access your data. Apple records certain data for security, support and reporting purposes. If you agree, Apple may also use your Apple Account information to send you marketing emails and communications, including based on your use of Apple services.</p>
                 <button class="submit cursor">Continue</button>
                 
                 `
     a.appendChild(div)
 
+
+    document.querySelector('a').addEventListener('click', () => {
+        a.removeChild(div)
+        LoginPortal()
+    })
+
     document.querySelector(".cancel").addEventListener('click', () => {
         let a = document.querySelector(".Login-Section")
         a.removeChild(div)
     })
-    
+
     // Account details saver
     document.querySelector(".submit").addEventListener('click', async () => {
         let username = document.getElementById("User").value
         let userpass = document.getElementById("Pass").value
-        let r = await fetch("http://localhost:5000/", {
+        let r = await fetch("http://localhost:5000/registor", {
             method: "POST", headers: {
                 "Content-Type": "application/json",
-            }, body: JSON.stringify({username,userpass })
+            }, body: JSON.stringify({ username, userpass })
         })
+        const data = await r.json()
+
+        if (data.success) {
+            alert(data.message)
+            a.removeChild(div)
+            LoginPortal()
+        }
+        else {
+            alert("Registration failed")
+        }
         console.log("Post request sent")
     })
 })
