@@ -214,7 +214,7 @@ function LoginPortal() {
         let username = document.getElementById("User").value
         let userpass = document.getElementById("Pass").value
         let r = await fetch("http://localhost:5000/login", {
-            method: "POST", headers: {
+            method: "POST", credentials: "include", headers: {
                 "Content-Type": "application/json",
             }, body: JSON.stringify({ username, userpass })
         })
