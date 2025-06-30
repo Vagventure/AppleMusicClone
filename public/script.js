@@ -133,7 +133,11 @@ async function displayradio() {
         e.addEventListener('click', async () => {
             let title = e.getElementsByTagName('span')[0].innerHTML;
             console.log(title)
-            if (e) {
+            let a = await fetch(`http://localhost:3000/api/check-session`)
+            const data = await a.json()
+            if (!data.login) {
+                LoginPortal()
+            } else {
                 window.location.href = `/FM/${title}`;
             }
 
@@ -172,7 +176,11 @@ async function displayreleases() {
         e.addEventListener('click', async () => {
             let title = e.getElementsByTagName('span')[0].innerHTML;
             console.log(title)
-            if (e) {
+            let a = await fetch(`http://localhost:3000/api/check-session`)
+            const data = await a.json()
+            if (!data.login) {
+                LoginPortal()
+            } else {
                 window.location.href = `/Playlist/${title}`;
             }
 
@@ -213,7 +221,7 @@ function LoginPortal() {
     document.querySelector(".submit").addEventListener('click', async () => {
         let username = document.getElementById("User").value
         let userpass = document.getElementById("Pass").value
-        let r = await fetch("http://localhost:5000/login", {
+        let r = await fetch("http://localhost:3000/login", {
             method: "POST", credentials: "include", headers: {
                 "Content-Type": "application/json",
             }, body: JSON.stringify({ username, userpass })
@@ -378,7 +386,7 @@ document.querySelector(".login-btn").addEventListener('click', () => {
     document.querySelector(".submit").addEventListener('click', async () => {
         let username = document.getElementById("User").value
         let userpass = document.getElementById("Pass").value
-        let r = await fetch("http://localhost:5000/registor", {
+        let r = await fetch("http://localhost:3000/registor", {
             method: "POST", headers: {
                 "Content-Type": "application/json",
             }, body: JSON.stringify({ username, userpass })
