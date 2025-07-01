@@ -69,7 +69,7 @@ app.get('/Playlist/:slug', (req, res) => {
    res.render('playlist', { route: routePath, artist: artistName });
 });
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
    res.sendFile('new.html', { root: __dirname });
 });
 
@@ -98,6 +98,35 @@ app.post('/login', async (req, res) => {
       req.session.user = user._id
       console.log("Session id: ", req.session.user)
       res.json({ success: true, message: "Login successfull" })
+   }
+   catch (err) {
+      console.log(err)
+      res.status(500).json({ success: false, message: "Server error" })
+   }
+})
+
+app.post('/logout', async (req, res) => {
+   const { username, userpass } = req.body
+
+   try {
+      const user = await Account.findOne({ username })
+      if (!user) {
+         return res.json({ success: false, message: "User not found" })
+      }
+
+      const isMatch = await bcrypt.compare(userpass, user.password)
+      if (!isMatch) {
+         return res.json({ success: false, message: "Incorrect password" })
+      }
+      req.session.destroy(err => {
+         if (err) {
+            console.log(err)
+            res.json({ success: false, message: "Logout insuccessfull" })
+         }
+         res.clearCookie('connect.sid')
+         res.json({ success: true, message: "Logout successfull" })
+
+      })
    }
    catch (err) {
       console.log(err)

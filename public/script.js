@@ -1,5 +1,8 @@
+
 let audio = new Audio();
 let currentSong = null;
+let username = null;
+let userpass = null;
 
 const explore = [
     ["Browse by Genre", "Worldwide", "Spatial Audio"],
@@ -219,18 +222,21 @@ function LoginPortal() {
 
     // Account details saver
     document.querySelector(".submit").addEventListener('click', async () => {
-        let username = document.getElementById("User").value
-        let userpass = document.getElementById("Pass").value
+        username = document.getElementById("User").value
+        userpass = document.getElementById("Pass").value
         let r = await fetch("http://localhost:3000/login", {
             method: "POST", credentials: "include", headers: {
                 "Content-Type": "application/json",
             }, body: JSON.stringify({ username, userpass })
         })
         const data = await r.json()
-
+        
         if (data.success) {
             alert(data.message)
             a.removeChild(div)
+            signout = document.querySelector(".login-btn")
+            signout.innerHTML = `<img class="user cursor " src="/images/user.svg"></img> Sign Out`
+          
         }
         else {
             alert(data.message)
@@ -351,13 +357,27 @@ const seekbarinfo = () => {
 // });
 
 //Registor Portal
-document.querySelector(".login-btn").addEventListener('click', () => {
-    let a = document.querySelector(".Login-Section")
-    console.log(a)
-    let div = document.createElement('div')
-    div.className = "registory"
+document.querySelector(".login-btn").addEventListener('click', async () => {
+    let b = await fetch(`http://localhost:3000/api/check-session`)
+    const data = await b.json()
+    if (data.login) {
+        let r = await fetch("http://localhost:3000/logout", {
+            method: "POST", credentials: "include", headers: {
+                "Content-Type": "application/json",
+            }, body: JSON.stringify({ username, userpass })
 
-    div.innerHTML = `  
+        })
+        signout = document.querySelector(".login-btn")
+        signout.innerText = "Sign In"
+        
+    } else {
+
+        let a = document.querySelector(".Login-Section")
+        console.log(a)
+        let div = document.createElement('div')
+        div.className = "registory"
+
+        div.innerHTML = `  
                 <img class="cancel cursor" src="/images/cancel.svg">
                 <img src="/images/logo.svg">
                 <h1>Sign in or Sign up</h1>
@@ -369,40 +389,41 @@ document.querySelector(".login-btn").addEventListener('click', () => {
                 <button class="submit cursor">Continue</button>
                 
                 `
-    a.appendChild(div)
+        a.appendChild(div)
 
 
-    document.querySelector('a').addEventListener('click', () => {
-        a.removeChild(div)
-        LoginPortal()
-    })
-
-    document.querySelector(".cancel").addEventListener('click', () => {
-        let a = document.querySelector(".Login-Section")
-        a.removeChild(div)
-    })
-
-    // Account details saver
-    document.querySelector(".submit").addEventListener('click', async () => {
-        let username = document.getElementById("User").value
-        let userpass = document.getElementById("Pass").value
-        let r = await fetch("http://localhost:3000/registor", {
-            method: "POST", headers: {
-                "Content-Type": "application/json",
-            }, body: JSON.stringify({ username, userpass })
-        })
-        const data = await r.json()
-
-        if (data.success) {
-            alert(data.message)
+        document.querySelector('a').addEventListener('click', () => {
             a.removeChild(div)
             LoginPortal()
-        }
-        else {
-            alert("Registration failed")
-        }
-        console.log("Post request sent")
-    })
+        })
+
+        document.querySelector(".cancel").addEventListener('click', () => {
+            let a = document.querySelector(".Login-Section")
+            a.removeChild(div)
+        })
+
+        // Account details saver
+        document.querySelector(".submit").addEventListener('click', async () => {
+            let username = document.getElementById("User").value
+            let userpass = document.getElementById("Pass").value
+            let r = await fetch("http://localhost:3000/registor", {
+                method: "POST", headers: {
+                    "Content-Type": "application/json",
+                }, body: JSON.stringify({ username, userpass })
+            })
+            const data = await r.json()
+
+            if (data.success) {
+                alert(data.message)
+                a.removeChild(div)
+                LoginPortal()
+            }
+            else {
+                alert("Registration failed")
+            }
+            console.log("Post request sent")
+        })
+    }
 })
 
 
