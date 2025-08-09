@@ -3,7 +3,7 @@
 This is a **full-stack clone** of Apple Music built using **HTML, CSS, JavaScript, Node.js, and MongoDB**.  
 It includes music browsing, playlists, albums, and a secure login/logout system to access restricted content.
 
----
+
 
 ## 📸 Screenshots
 
