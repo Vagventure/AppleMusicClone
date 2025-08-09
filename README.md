@@ -8,10 +8,10 @@ It includes music browsing, playlists, albums, and a secure login/logout system 
 ## 📸 Screenshots
 
 ### Main Page
-![Screenshot](/AppleSS.png)
+![Screenshot](./public/images/AppleSS.png)
 
 ### Login Portal
-![Screenshot](/logSS.png)
+![Screenshot](./public/images/logSS.png)
 
 ---
 
@@ -45,7 +45,9 @@ It includes music browsing, playlists, albums, and a secure login/logout system 
    ```
 
 2. Install dependencies:
+```bash
    npm install
+   ```
 
 3. Set up .env file:
 ```bash
@@ -55,7 +57,11 @@ It includes music browsing, playlists, albums, and a secure login/logout system 
    ```
 
 4. Run the app:
+```bash
    npm start
+   ```
 
 5. Open in your browser:
+```bash
    http://localhost:3000
+   ```
